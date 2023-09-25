@@ -9,8 +9,8 @@ public class Main {
             System.out.println(m1.getDuration());
             System.out.println(m2.getReleaseDate());
             System.out.println(m2.getSinger());
-            System.out.println(m1.getTitle());
-            System.out.println(m1.getSinger().getName());
+            System.out.println(m2.getTitle());
+            System.out.println(m2.getSinger().getName());
             System.out.println(m1.getSinger().getGender());
             System.out.println(m1.getSinger().getNationality());
             System.out.println(m1.getSinger().getDateOfBirth());

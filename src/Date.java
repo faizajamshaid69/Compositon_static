@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Date {
 
         private int day;
@@ -35,6 +37,17 @@ public class Date {
         public String toString(){
             return   String.format("%d/%d/%d",this.day,this.month,this.year);
         }
+    public boolean equals(Object obj){
+        if(this==obj){
+            return true;
+        }
+        if(obj==null||getClass()!=obj.getClass()){
+            return false;
+        }
+        Date other=(Date)obj;
+        return Objects.equals(this.day,other.day)&&
+                Objects.equals(this.month,other.month)&&Objects.equals(this.year,other.year);
+    }
     }
 
 

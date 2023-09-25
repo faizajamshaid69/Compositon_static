@@ -1,4 +1,6 @@
-   public class Music {
+
+import java.util.Objects;
+public class Music {
 
         private String title;
         private String duration;
@@ -56,8 +58,23 @@
             return String.format("%12s%12s%12s%12s%12s",this.title,this.duration,this.genre,this.releaseDate,this.singer);
         }
 
+       @Override
+       public boolean equals(Object obj) {
+           if (this == obj) {
+               return true;
+           }
+           if (obj == null || getClass() != obj.getClass()) {
+               return false;
+           }
+           Music other = (Music) obj;
+           return Objects.equals(this.title, other.title) &&
+                   Objects.equals(this.duration, other.duration) &&
+                   Objects.equals(this.genre, other.genre) &&
+                   Objects.equals(this.releaseDate, other.releaseDate) &&
+                   Objects.equals(this.singer, other.singer);
+       }
 
 
-    }
+   }
 
 

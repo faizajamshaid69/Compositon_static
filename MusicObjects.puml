@@ -1,0 +1,51 @@
+@startuml
+class Date{
+        -int day;
+         -int month;
+        - int year;
+        + Date(day: int, month: int, year: int)
+        +getDay():int
+         +setDay( day:int):void
+        +getMonth():int
+       + setMonth( month:int) :void
+       + getYear():int
+       +setYear( year:int):void
+        + toString():String
+}
+
+class Music{
+          -String title;
+                 -String duration;
+                  -String genre;
+                  -Date releaseDate;
+                  -Singer singer;
+                  +Music(title:String,duration:String,genre:String,releaseDate:Date,singer:Singer)
+                  +getTitle():String
+                  +setTitle(title:String):String
+                  +getDuration():String
+                  +setDuration(duration:String):String
+                  +getGenre():String
+                  +setGenre(genre:String):String
+                  +getReleaseDate():int
+                  +setReleaseDate(releaseDate:int):int
+                  +setSinger(singer:String):Singer
+                  +getSinger():Singer
+                  }
+class Singer{
+- String name;
+        -String gender;
+        - String nationality;
+       - Date dateOfBirth;
+       }
+Class Music
+class Date
+Class Singer
+
+Music --> Date
+Music --> Singer
+
+
+
+
+
+@enduml

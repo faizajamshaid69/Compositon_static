@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Singer {
 
         private String name;
@@ -11,7 +13,7 @@ public class Singer {
             this.setDateOfBirth(dateOfBirth);
         }
 
-        public String getName() {
+       public String getName() {
             return name;
         }
 
@@ -43,7 +45,18 @@ public class Singer {
             this.dateOfBirth = dateOfBirth;
         }
         public  String toString(){
-            return String.format("%12s%12s%12s%12s",this.name,this.gender,this.nationality,this.dateOfBirth);
+            return String.format("%7s%12s%12s%12s",this.name,this.gender,this.nationality,this.dateOfBirth);
+        }
+        public boolean equals(Object obj){
+            if(this==obj){
+                return true;
+            }
+            if(obj==null||getClass()!=obj.getClass()){
+                return false;
+            }
+            Singer other=(Singer)obj;
+            return Objects.equals(this.name,other.name)&&
+             Objects.equals(this.gender,other.gender)&&Objects.equals(this.nationality,other.nationality)&&Objects.equals(this.dateOfBirth,other.dateOfBirth);
         }
     }
 
